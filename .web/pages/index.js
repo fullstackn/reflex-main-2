@@ -19,6 +19,16 @@ import NextHead from "next/head"
 
 
 
+const pulse = keyframes`
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+`
+
+
 export function Toaster_6e90e5e87a1cac8c96c683214079bef3 () {
   const { resolvedColorMode } = useContext(ColorModeContext)
 
@@ -47,32 +57,23 @@ useEffect(() => {
   )
 }
 
-                function Fallback({ error, resetErrorBoundary }) {
-                    return (
-                        <div>
-  <p>
-  {`Ooops...Unknown Reflex error has occured:`}
-</p>
-  <p css={{"color": "red"}}>
-  {error.message}
-</p>
-  <p>
-  {`Please contact the support.`}
-</p>
-</div>
-                    );
-                }
-            
+export function Fragment_cf53a535ae2e610a113dd361eb6ac95b () {
+  const [addEvents, connectErrors] = useContext(EventLoopContext);
 
-const pulse = keyframes`
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-`
 
+
+  return (
+    <Fragment>
+  {isTrue(connectErrors.length > 0) ? (
+  <Fragment>
+  <LucideWifiOffIcon css={{"color": "crimson", "zIndex": 9999, "position": "fixed", "bottom": "33px", "right": "33px", "animation": `${pulse} 1s infinite`}} size={32}/>
+</Fragment>
+) : (
+  <Fragment/>
+)}
+</Fragment>
+  )
+}
 
 export function Div_ac2a89ea84667d600a059f034bd91dfe () {
   const [addEvents, connectErrors] = useContext(EventLoopContext);
@@ -86,7 +87,7 @@ export function Div_ac2a89ea84667d600a059f034bd91dfe () {
   )
 }
 
-export function Fragment_feb981647c0ab750a00a41d6f74257c5 () {
+export function Fragment_8363f1cb7b607ba411ea2c8f4c3b04df () {
   const reflex___state____state__app___app____login_state = useContext(StateContexts.reflex___state____state__app___app____login_state)
   const [addEvents, connectErrors] = useContext(EventLoopContext);
   const reflex___state____state__app___main____page_state = useContext(StateContexts.reflex___state____state__app___main____page_state)
@@ -345,8 +346,8 @@ export function Fragment_feb981647c0ab750a00a41d6f74257c5 () {
   {isTrue(reflex___state____state__app___components___notifications____notification_state.data) ? (
   <Fragment>
   <RadixThemesFlex align={`start`} className={`rx-Stack`} direction={`column`} gap={`1`}>
-  {reflex___state____state__app___components___notifications____notification_state.data.map((notification, index_06000ee503746a19) => (
-  <RadixThemesCard asChild={true} css={{"height": "auto", "width": "300px"}} key={index_06000ee503746a19}>
+  {reflex___state____state__app___components___notifications____notification_state.data.map((notification, index_76220fb924edf747) => (
+  <RadixThemesCard asChild={true} css={{"height": "auto", "width": "300px"}} key={index_76220fb924edf747}>
   <RadixThemesButton onClick={(_e) => addEvents([Event("reflex___state____state.app___components___notifications____notification_state.mark_as_read", {notification_id:notification["_id"]})], (_e), {})}>
   <RadixThemesFlex align={`start`} className={`rx-Stack`} direction={`column`} gap={`3`}>
   <RadixThemesStrong>
@@ -400,8 +401,8 @@ export function Fragment_feb981647c0ab750a00a41d6f74257c5 () {
   <RadixThemesHeading size={`6`}>
   {`Not Started`}
 </RadixThemesHeading>
-  {reflex___state____state__app___pages___taskboard____taskboard_state.not_started_tasks.map((item, index_95a134a0ef5c7943) => (
-  <RadixThemesCard asChild={true} key={index_95a134a0ef5c7943}>
+  {reflex___state____state__app___pages___taskboard____taskboard_state.not_started_tasks.map((item, index_50b3c72ad0903fe1) => (
+  <RadixThemesCard asChild={true} key={index_50b3c72ad0903fe1}>
   <RadixThemesLink css={{"&:hover": {"color": "var(--accent-8)"}}} onClick={(_e) => addEvents([Event("reflex___state____state.app___pages___taskboard____taskboard_state.open_drawer", {item:item})], (_e), {})}>
   <RadixThemesFlex gap={`2`}>
   <RadixThemesBox>
@@ -421,8 +422,8 @@ export function Fragment_feb981647c0ab750a00a41d6f74257c5 () {
   <RadixThemesHeading size={`6`}>
   {`In Progress`}
 </RadixThemesHeading>
-  {reflex___state____state__app___pages___taskboard____taskboard_state.in_progress_tasks.map((item, index_95a134a0ef5c7943) => (
-  <RadixThemesCard asChild={true} key={index_95a134a0ef5c7943}>
+  {reflex___state____state__app___pages___taskboard____taskboard_state.in_progress_tasks.map((item, index_50b3c72ad0903fe1) => (
+  <RadixThemesCard asChild={true} key={index_50b3c72ad0903fe1}>
   <RadixThemesLink css={{"&:hover": {"color": "var(--accent-8)"}}} onClick={(_e) => addEvents([Event("reflex___state____state.app___pages___taskboard____taskboard_state.open_drawer", {item:item})], (_e), {})}>
   <RadixThemesFlex gap={`2`}>
   <RadixThemesBox>
@@ -442,8 +443,8 @@ export function Fragment_feb981647c0ab750a00a41d6f74257c5 () {
   <RadixThemesHeading size={`6`}>
   {`Done`}
 </RadixThemesHeading>
-  {reflex___state____state__app___pages___taskboard____taskboard_state.done_tasks.map((item, index_95a134a0ef5c7943) => (
-  <RadixThemesCard asChild={true} key={index_95a134a0ef5c7943}>
+  {reflex___state____state__app___pages___taskboard____taskboard_state.done_tasks.map((item, index_50b3c72ad0903fe1) => (
+  <RadixThemesCard asChild={true} key={index_50b3c72ad0903fe1}>
   <RadixThemesLink css={{"&:hover": {"color": "var(--accent-8)"}}} onClick={(_e) => addEvents([Event("reflex___state____state.app___pages___taskboard____taskboard_state.open_drawer", {item:item})], (_e), {})}>
   <RadixThemesFlex gap={`2`}>
   <RadixThemesBox>
@@ -1222,8 +1223,8 @@ export function Fragment_feb981647c0ab750a00a41d6f74257c5 () {
   <RadixThemesSelect.Content position={`popper`}>
   <RadixThemesSelect.Group>
   {``}
-  {reflex___state____state__app___pages___customer_service____customer_service_state.sort_categories.map((item, index_b8c37db23ba411db) => (
-  <RadixThemesSelect.Item key={index_b8c37db23ba411db} value={item}>
+  {reflex___state____state__app___pages___customer_service____customer_service_state.sort_categories.map((item, index_150381d92f8fe7a3) => (
+  <RadixThemesSelect.Item key={index_150381d92f8fe7a3} value={item}>
   {item}
 </RadixThemesSelect.Item>
 ))}
@@ -1237,8 +1238,8 @@ export function Fragment_feb981647c0ab750a00a41d6f74257c5 () {
   <RadixThemesText as={`p`}>
   {`New (${reflex___state____state__app___pages___customer_service____customer_service_state.new_count})`}
 </RadixThemesText>
-  {reflex___state____state__app___pages___customer_service____customer_service_state.new_data.map((complaint, index_0340960c39673019) => (
-  <RadixThemesBox key={index_0340960c39673019}>
+  {reflex___state____state__app___pages___customer_service____customer_service_state.new_data.map((complaint, index_0d18f8f2f01704ad) => (
+  <RadixThemesBox key={index_0d18f8f2f01704ad}>
   <RadixThemesDialog.Root open={reflex___state____state__app___components___lightbox____editing_state.is_box_open}>
   <RadixThemesDialog.Content>
   <RadixFormRoot className={`Root `} css={{"width": "100%"}} onSubmit={handleSubmit_09423c28d7d3048987b76882bb97b5b9}>
@@ -2486,8 +2487,8 @@ export function Fragment_feb981647c0ab750a00a41d6f74257c5 () {
 </RadixThemesPopover.Trigger>
   <RadixThemesPopover.Content>
   <RadixThemesFlex align={`start`} className={`rx-Stack`} direction={`column`} gap={`3`}>
-  {reflex___state____state__app___components___form_fields____download_state.images.map((image, index_1d4158b32dee710f) => (
-  <RadixThemesButton css={{"width": "100%"}} key={index_1d4158b32dee710f} onClick={(_e) => addEvents([Event("_download", {url:image,filename:``})], (_e), {})} variant={`ghost`}>
+  {reflex___state____state__app___components___form_fields____download_state.images.map((image, index_a368c70459e43df8) => (
+  <RadixThemesButton css={{"width": "100%"}} key={index_a368c70459e43df8} onClick={(_e) => addEvents([Event("_download", {url:image,filename:``})], (_e), {})} variant={`ghost`}>
   <img css={{"height": "50px", "width": "50px"}} src={image}/>
 </RadixThemesButton>
 ))}
@@ -2897,8 +2898,8 @@ export function Fragment_feb981647c0ab750a00a41d6f74257c5 () {
   <RadixThemesText as={`p`}>
   {`In Progress (${reflex___state____state__app___pages___customer_service____customer_service_state.inprogress_count})`}
 </RadixThemesText>
-  {reflex___state____state__app___pages___customer_service____customer_service_state.inprogress_data.map((complaint, index_0340960c39673019) => (
-  <RadixThemesBox key={index_0340960c39673019}>
+  {reflex___state____state__app___pages___customer_service____customer_service_state.inprogress_data.map((complaint, index_0d18f8f2f01704ad) => (
+  <RadixThemesBox key={index_0d18f8f2f01704ad}>
   <RadixThemesDialog.Root open={reflex___state____state__app___components___lightbox____editing_state.is_box_open}>
   <RadixThemesDialog.Content>
   <RadixFormRoot className={`Root `} css={{"width": "100%"}} onSubmit={handleSubmit_09423c28d7d3048987b76882bb97b5b9}>
@@ -4146,8 +4147,8 @@ export function Fragment_feb981647c0ab750a00a41d6f74257c5 () {
 </RadixThemesPopover.Trigger>
   <RadixThemesPopover.Content>
   <RadixThemesFlex align={`start`} className={`rx-Stack`} direction={`column`} gap={`3`}>
-  {reflex___state____state__app___components___form_fields____download_state.images.map((image, index_1d4158b32dee710f) => (
-  <RadixThemesButton css={{"width": "100%"}} key={index_1d4158b32dee710f} onClick={(_e) => addEvents([Event("_download", {url:image,filename:``})], (_e), {})} variant={`ghost`}>
+  {reflex___state____state__app___components___form_fields____download_state.images.map((image, index_a368c70459e43df8) => (
+  <RadixThemesButton css={{"width": "100%"}} key={index_a368c70459e43df8} onClick={(_e) => addEvents([Event("_download", {url:image,filename:``})], (_e), {})} variant={`ghost`}>
   <img css={{"height": "50px", "width": "50px"}} src={image}/>
 </RadixThemesButton>
 ))}
@@ -4557,8 +4558,8 @@ export function Fragment_feb981647c0ab750a00a41d6f74257c5 () {
   <RadixThemesText as={`p`}>
   {`Resolved (${reflex___state____state__app___pages___customer_service____customer_service_state.resolved_count})`}
 </RadixThemesText>
-  {reflex___state____state__app___pages___customer_service____customer_service_state.resolved_data.map((complaint, index_0340960c39673019) => (
-  <RadixThemesBox key={index_0340960c39673019}>
+  {reflex___state____state__app___pages___customer_service____customer_service_state.resolved_data.map((complaint, index_0d18f8f2f01704ad) => (
+  <RadixThemesBox key={index_0d18f8f2f01704ad}>
   <RadixThemesDialog.Root open={reflex___state____state__app___components___lightbox____editing_state.is_box_open}>
   <RadixThemesDialog.Content>
   <RadixFormRoot className={`Root `} css={{"width": "100%"}} onSubmit={handleSubmit_09423c28d7d3048987b76882bb97b5b9}>
@@ -5806,8 +5807,8 @@ export function Fragment_feb981647c0ab750a00a41d6f74257c5 () {
 </RadixThemesPopover.Trigger>
   <RadixThemesPopover.Content>
   <RadixThemesFlex align={`start`} className={`rx-Stack`} direction={`column`} gap={`3`}>
-  {reflex___state____state__app___components___form_fields____download_state.images.map((image, index_1d4158b32dee710f) => (
-  <RadixThemesButton css={{"width": "100%"}} key={index_1d4158b32dee710f} onClick={(_e) => addEvents([Event("_download", {url:image,filename:``})], (_e), {})} variant={`ghost`}>
+  {reflex___state____state__app___components___form_fields____download_state.images.map((image, index_a368c70459e43df8) => (
+  <RadixThemesButton css={{"width": "100%"}} key={index_a368c70459e43df8} onClick={(_e) => addEvents([Event("_download", {url:image,filename:``})], (_e), {})} variant={`ghost`}>
   <img css={{"height": "50px", "width": "50px"}} src={image}/>
 </RadixThemesButton>
 ))}
@@ -6823,8 +6824,8 @@ export function Fragment_feb981647c0ab750a00a41d6f74257c5 () {
 </RadixThemesPopover.Trigger>
   <RadixThemesPopover.Content>
   <RadixThemesFlex align={`start`} className={`rx-Stack`} direction={`column`} gap={`3`}>
-  {reflex___state____state__app___components___form_fields____download_state.images.map((image, index_1d4158b32dee710f) => (
-  <RadixThemesButton css={{"width": "100%"}} key={index_1d4158b32dee710f} onClick={(_e) => addEvents([Event("_download", {url:image,filename:``})], (_e), {})} variant={`ghost`}>
+  {reflex___state____state__app___components___form_fields____download_state.images.map((image, index_a368c70459e43df8) => (
+  <RadixThemesButton css={{"width": "100%"}} key={index_a368c70459e43df8} onClick={(_e) => addEvents([Event("_download", {url:image,filename:``})], (_e), {})} variant={`ghost`}>
   <img css={{"height": "50px", "width": "50px"}} src={image}/>
 </RadixThemesButton>
 ))}
@@ -7927,8 +7928,8 @@ export function Fragment_feb981647c0ab750a00a41d6f74257c5 () {
   <RadixThemesSelect.Content position={`popper`}>
   <RadixThemesSelect.Group>
   {``}
-  {reflex___state____state__app___components___data_table____table_state.column_headers.map((item, index_b8c37db23ba411db) => (
-  <RadixThemesSelect.Item key={index_b8c37db23ba411db} value={item}>
+  {reflex___state____state__app___components___data_table____table_state.column_headers.map((item, index_150381d92f8fe7a3) => (
+  <RadixThemesSelect.Item key={index_150381d92f8fe7a3} value={item}>
   {item}
 </RadixThemesSelect.Item>
 ))}
@@ -7940,8 +7941,8 @@ export function Fragment_feb981647c0ab750a00a41d6f74257c5 () {
   <RadixThemesTable.Root css={{"width": "100%"}} variant={`surface`}>
   <RadixThemesTable.Header css={{"width": "100%"}}>
   <RadixThemesTable.Row>
-  {reflex___state____state__app___components___data_table____table_state.column_headers.map((column, index_fd2df587f8784f7d) => (
-  <RadixThemesTable.ColumnHeaderCell key={index_fd2df587f8784f7d} onClick={(_e) => addEvents([Event("reflex___state____state.app___components___data_table____table_state.set_sort", {column:column})], (_e), {})}>
+  {reflex___state____state__app___components___data_table____table_state.column_headers.map((column, index_d9edfb4c366e192b) => (
+  <RadixThemesTable.ColumnHeaderCell key={index_d9edfb4c366e192b} onClick={(_e) => addEvents([Event("reflex___state____state.app___components___data_table____table_state.set_sort", {column:column})], (_e), {})}>
   <RadixThemesFlex align={`center`} className={`rx-Stack`} direction={`row`} gap={`3`}>
   <RadixThemesText as={`p`}>
   {column}
@@ -7972,10 +7973,10 @@ export function Fragment_feb981647c0ab750a00a41d6f74257c5 () {
 </RadixThemesTable.Row>
 </RadixThemesTable.Header>
   <RadixThemesTable.Body css={{"width": "100%"}}>
-  {reflex___state____state__app___components___data_table____table_state.current_data.map((doc, index_53b4915d03f5e0a9) => (
-  <RadixThemesTable.Row key={index_53b4915d03f5e0a9} onClick={(_e) => addEvents([Event("reflex___state____state.app___components___lightbox____viewing_state.open_box", {new_collection:reflex___state____state__app___components___data_table____table_state.doc_type,new_doc:doc})], (_e), {})}>
-  {Object.entries(doc).map((entry, index_b4acac8b80712e73) => (
-  <RadixThemesTable.Cell key={index_b4acac8b80712e73}>
+  {reflex___state____state__app___components___data_table____table_state.current_data.map((doc, index_07b933202c915c5d) => (
+  <RadixThemesTable.Row key={index_07b933202c915c5d} onClick={(_e) => addEvents([Event("reflex___state____state.app___components___lightbox____viewing_state.open_box", {new_collection:reflex___state____state__app___components___data_table____table_state.doc_type,new_doc:doc})], (_e), {})}>
+  {Object.entries(doc).map((entry, index_c68b4c0e4a37a414) => (
+  <RadixThemesTable.Cell key={index_c68b4c0e4a37a414}>
   {entry.at(1)}
 </RadixThemesTable.Cell>
 ))}
@@ -8556,8 +8557,8 @@ export function Fragment_feb981647c0ab750a00a41d6f74257c5 () {
 </RadixThemesPopover.Trigger>
   <RadixThemesPopover.Content>
   <RadixThemesFlex align={`start`} className={`rx-Stack`} direction={`column`} gap={`3`}>
-  {reflex___state____state__app___components___form_fields____download_state.images.map((image, index_1d4158b32dee710f) => (
-  <RadixThemesButton css={{"width": "100%"}} key={index_1d4158b32dee710f} onClick={(_e) => addEvents([Event("_download", {url:image,filename:``})], (_e), {})} variant={`ghost`}>
+  {reflex___state____state__app___components___form_fields____download_state.images.map((image, index_a368c70459e43df8) => (
+  <RadixThemesButton css={{"width": "100%"}} key={index_a368c70459e43df8} onClick={(_e) => addEvents([Event("_download", {url:image,filename:``})], (_e), {})} variant={`ghost`}>
   <img css={{"height": "50px", "width": "50px"}} src={image}/>
 </RadixThemesButton>
 ))}
@@ -9660,8 +9661,8 @@ export function Fragment_feb981647c0ab750a00a41d6f74257c5 () {
   <RadixThemesSelect.Content position={`popper`}>
   <RadixThemesSelect.Group>
   {``}
-  {reflex___state____state__app___components___data_table____table_state.column_headers.map((item, index_b8c37db23ba411db) => (
-  <RadixThemesSelect.Item key={index_b8c37db23ba411db} value={item}>
+  {reflex___state____state__app___components___data_table____table_state.column_headers.map((item, index_150381d92f8fe7a3) => (
+  <RadixThemesSelect.Item key={index_150381d92f8fe7a3} value={item}>
   {item}
 </RadixThemesSelect.Item>
 ))}
@@ -9673,8 +9674,8 @@ export function Fragment_feb981647c0ab750a00a41d6f74257c5 () {
   <RadixThemesTable.Root css={{"width": "100%"}} variant={`surface`}>
   <RadixThemesTable.Header css={{"width": "100%"}}>
   <RadixThemesTable.Row>
-  {reflex___state____state__app___components___data_table____table_state.column_headers.map((column, index_fd2df587f8784f7d) => (
-  <RadixThemesTable.ColumnHeaderCell key={index_fd2df587f8784f7d} onClick={(_e) => addEvents([Event("reflex___state____state.app___components___data_table____table_state.set_sort", {column:column})], (_e), {})}>
+  {reflex___state____state__app___components___data_table____table_state.column_headers.map((column, index_d9edfb4c366e192b) => (
+  <RadixThemesTable.ColumnHeaderCell key={index_d9edfb4c366e192b} onClick={(_e) => addEvents([Event("reflex___state____state.app___components___data_table____table_state.set_sort", {column:column})], (_e), {})}>
   <RadixThemesFlex align={`center`} className={`rx-Stack`} direction={`row`} gap={`3`}>
   <RadixThemesText as={`p`}>
   {column}
@@ -9705,10 +9706,10 @@ export function Fragment_feb981647c0ab750a00a41d6f74257c5 () {
 </RadixThemesTable.Row>
 </RadixThemesTable.Header>
   <RadixThemesTable.Body css={{"width": "100%"}}>
-  {reflex___state____state__app___components___data_table____table_state.current_data.map((doc, index_53b4915d03f5e0a9) => (
-  <RadixThemesTable.Row key={index_53b4915d03f5e0a9} onClick={(_e) => addEvents([Event("reflex___state____state.app___components___lightbox____viewing_state.open_box", {new_collection:reflex___state____state__app___components___data_table____table_state.doc_type,new_doc:doc})], (_e), {})}>
-  {Object.entries(doc).map((entry, index_b4acac8b80712e73) => (
-  <RadixThemesTable.Cell key={index_b4acac8b80712e73}>
+  {reflex___state____state__app___components___data_table____table_state.current_data.map((doc, index_07b933202c915c5d) => (
+  <RadixThemesTable.Row key={index_07b933202c915c5d} onClick={(_e) => addEvents([Event("reflex___state____state.app___components___lightbox____viewing_state.open_box", {new_collection:reflex___state____state__app___components___data_table____table_state.doc_type,new_doc:doc})], (_e), {})}>
+  {Object.entries(doc).map((entry, index_c68b4c0e4a37a414) => (
+  <RadixThemesTable.Cell key={index_c68b4c0e4a37a414}>
   {entry.at(1)}
 </RadixThemesTable.Cell>
 ))}
@@ -10289,8 +10290,8 @@ export function Fragment_feb981647c0ab750a00a41d6f74257c5 () {
 </RadixThemesPopover.Trigger>
   <RadixThemesPopover.Content>
   <RadixThemesFlex align={`start`} className={`rx-Stack`} direction={`column`} gap={`3`}>
-  {reflex___state____state__app___components___form_fields____download_state.images.map((image, index_1d4158b32dee710f) => (
-  <RadixThemesButton css={{"width": "100%"}} key={index_1d4158b32dee710f} onClick={(_e) => addEvents([Event("_download", {url:image,filename:``})], (_e), {})} variant={`ghost`}>
+  {reflex___state____state__app___components___form_fields____download_state.images.map((image, index_a368c70459e43df8) => (
+  <RadixThemesButton css={{"width": "100%"}} key={index_a368c70459e43df8} onClick={(_e) => addEvents([Event("_download", {url:image,filename:``})], (_e), {})} variant={`ghost`}>
   <img css={{"height": "50px", "width": "50px"}} src={image}/>
 </RadixThemesButton>
 ))}
@@ -11393,8 +11394,8 @@ export function Fragment_feb981647c0ab750a00a41d6f74257c5 () {
   <RadixThemesSelect.Content position={`popper`}>
   <RadixThemesSelect.Group>
   {``}
-  {reflex___state____state__app___components___data_table____table_state.column_headers.map((item, index_b8c37db23ba411db) => (
-  <RadixThemesSelect.Item key={index_b8c37db23ba411db} value={item}>
+  {reflex___state____state__app___components___data_table____table_state.column_headers.map((item, index_150381d92f8fe7a3) => (
+  <RadixThemesSelect.Item key={index_150381d92f8fe7a3} value={item}>
   {item}
 </RadixThemesSelect.Item>
 ))}
@@ -11406,8 +11407,8 @@ export function Fragment_feb981647c0ab750a00a41d6f74257c5 () {
   <RadixThemesTable.Root css={{"width": "100%"}} variant={`surface`}>
   <RadixThemesTable.Header css={{"width": "100%"}}>
   <RadixThemesTable.Row>
-  {reflex___state____state__app___components___data_table____table_state.column_headers.map((column, index_fd2df587f8784f7d) => (
-  <RadixThemesTable.ColumnHeaderCell key={index_fd2df587f8784f7d} onClick={(_e) => addEvents([Event("reflex___state____state.app___components___data_table____table_state.set_sort", {column:column})], (_e), {})}>
+  {reflex___state____state__app___components___data_table____table_state.column_headers.map((column, index_d9edfb4c366e192b) => (
+  <RadixThemesTable.ColumnHeaderCell key={index_d9edfb4c366e192b} onClick={(_e) => addEvents([Event("reflex___state____state.app___components___data_table____table_state.set_sort", {column:column})], (_e), {})}>
   <RadixThemesFlex align={`center`} className={`rx-Stack`} direction={`row`} gap={`3`}>
   <RadixThemesText as={`p`}>
   {column}
@@ -11438,10 +11439,10 @@ export function Fragment_feb981647c0ab750a00a41d6f74257c5 () {
 </RadixThemesTable.Row>
 </RadixThemesTable.Header>
   <RadixThemesTable.Body css={{"width": "100%"}}>
-  {reflex___state____state__app___components___data_table____table_state.current_data.map((doc, index_53b4915d03f5e0a9) => (
-  <RadixThemesTable.Row key={index_53b4915d03f5e0a9} onClick={(_e) => addEvents([Event("reflex___state____state.app___components___lightbox____viewing_state.open_box", {new_collection:reflex___state____state__app___components___data_table____table_state.doc_type,new_doc:doc})], (_e), {})}>
-  {Object.entries(doc).map((entry, index_b4acac8b80712e73) => (
-  <RadixThemesTable.Cell key={index_b4acac8b80712e73}>
+  {reflex___state____state__app___components___data_table____table_state.current_data.map((doc, index_07b933202c915c5d) => (
+  <RadixThemesTable.Row key={index_07b933202c915c5d} onClick={(_e) => addEvents([Event("reflex___state____state.app___components___lightbox____viewing_state.open_box", {new_collection:reflex___state____state__app___components___data_table____table_state.doc_type,new_doc:doc})], (_e), {})}>
+  {Object.entries(doc).map((entry, index_c68b4c0e4a37a414) => (
+  <RadixThemesTable.Cell key={index_c68b4c0e4a37a414}>
   {entry.at(1)}
 </RadixThemesTable.Cell>
 ))}
@@ -12022,8 +12023,8 @@ export function Fragment_feb981647c0ab750a00a41d6f74257c5 () {
 </RadixThemesPopover.Trigger>
   <RadixThemesPopover.Content>
   <RadixThemesFlex align={`start`} className={`rx-Stack`} direction={`column`} gap={`3`}>
-  {reflex___state____state__app___components___form_fields____download_state.images.map((image, index_1d4158b32dee710f) => (
-  <RadixThemesButton css={{"width": "100%"}} key={index_1d4158b32dee710f} onClick={(_e) => addEvents([Event("_download", {url:image,filename:``})], (_e), {})} variant={`ghost`}>
+  {reflex___state____state__app___components___form_fields____download_state.images.map((image, index_a368c70459e43df8) => (
+  <RadixThemesButton css={{"width": "100%"}} key={index_a368c70459e43df8} onClick={(_e) => addEvents([Event("_download", {url:image,filename:``})], (_e), {})} variant={`ghost`}>
   <img css={{"height": "50px", "width": "50px"}} src={image}/>
 </RadixThemesButton>
 ))}
@@ -13126,8 +13127,8 @@ export function Fragment_feb981647c0ab750a00a41d6f74257c5 () {
   <RadixThemesSelect.Content position={`popper`}>
   <RadixThemesSelect.Group>
   {``}
-  {reflex___state____state__app___components___data_table____table_state.column_headers.map((item, index_b8c37db23ba411db) => (
-  <RadixThemesSelect.Item key={index_b8c37db23ba411db} value={item}>
+  {reflex___state____state__app___components___data_table____table_state.column_headers.map((item, index_150381d92f8fe7a3) => (
+  <RadixThemesSelect.Item key={index_150381d92f8fe7a3} value={item}>
   {item}
 </RadixThemesSelect.Item>
 ))}
@@ -13139,8 +13140,8 @@ export function Fragment_feb981647c0ab750a00a41d6f74257c5 () {
   <RadixThemesTable.Root css={{"width": "100%"}} variant={`surface`}>
   <RadixThemesTable.Header css={{"width": "100%"}}>
   <RadixThemesTable.Row>
-  {reflex___state____state__app___components___data_table____table_state.column_headers.map((column, index_fd2df587f8784f7d) => (
-  <RadixThemesTable.ColumnHeaderCell key={index_fd2df587f8784f7d} onClick={(_e) => addEvents([Event("reflex___state____state.app___components___data_table____table_state.set_sort", {column:column})], (_e), {})}>
+  {reflex___state____state__app___components___data_table____table_state.column_headers.map((column, index_d9edfb4c366e192b) => (
+  <RadixThemesTable.ColumnHeaderCell key={index_d9edfb4c366e192b} onClick={(_e) => addEvents([Event("reflex___state____state.app___components___data_table____table_state.set_sort", {column:column})], (_e), {})}>
   <RadixThemesFlex align={`center`} className={`rx-Stack`} direction={`row`} gap={`3`}>
   <RadixThemesText as={`p`}>
   {column}
@@ -13171,10 +13172,10 @@ export function Fragment_feb981647c0ab750a00a41d6f74257c5 () {
 </RadixThemesTable.Row>
 </RadixThemesTable.Header>
   <RadixThemesTable.Body css={{"width": "100%"}}>
-  {reflex___state____state__app___components___data_table____table_state.current_data.map((doc, index_53b4915d03f5e0a9) => (
-  <RadixThemesTable.Row key={index_53b4915d03f5e0a9} onClick={(_e) => addEvents([Event("reflex___state____state.app___components___lightbox____viewing_state.open_box", {new_collection:reflex___state____state__app___components___data_table____table_state.doc_type,new_doc:doc})], (_e), {})}>
-  {Object.entries(doc).map((entry, index_b4acac8b80712e73) => (
-  <RadixThemesTable.Cell key={index_b4acac8b80712e73}>
+  {reflex___state____state__app___components___data_table____table_state.current_data.map((doc, index_07b933202c915c5d) => (
+  <RadixThemesTable.Row key={index_07b933202c915c5d} onClick={(_e) => addEvents([Event("reflex___state____state.app___components___lightbox____viewing_state.open_box", {new_collection:reflex___state____state__app___components___data_table____table_state.doc_type,new_doc:doc})], (_e), {})}>
+  {Object.entries(doc).map((entry, index_c68b4c0e4a37a414) => (
+  <RadixThemesTable.Cell key={index_c68b4c0e4a37a414}>
   {entry.at(1)}
 </RadixThemesTable.Cell>
 ))}
@@ -13755,8 +13756,8 @@ export function Fragment_feb981647c0ab750a00a41d6f74257c5 () {
 </RadixThemesPopover.Trigger>
   <RadixThemesPopover.Content>
   <RadixThemesFlex align={`start`} className={`rx-Stack`} direction={`column`} gap={`3`}>
-  {reflex___state____state__app___components___form_fields____download_state.images.map((image, index_1d4158b32dee710f) => (
-  <RadixThemesButton css={{"width": "100%"}} key={index_1d4158b32dee710f} onClick={(_e) => addEvents([Event("_download", {url:image,filename:``})], (_e), {})} variant={`ghost`}>
+  {reflex___state____state__app___components___form_fields____download_state.images.map((image, index_a368c70459e43df8) => (
+  <RadixThemesButton css={{"width": "100%"}} key={index_a368c70459e43df8} onClick={(_e) => addEvents([Event("_download", {url:image,filename:``})], (_e), {})} variant={`ghost`}>
   <img css={{"height": "50px", "width": "50px"}} src={image}/>
 </RadixThemesButton>
 ))}
@@ -14859,8 +14860,8 @@ export function Fragment_feb981647c0ab750a00a41d6f74257c5 () {
   <RadixThemesSelect.Content position={`popper`}>
   <RadixThemesSelect.Group>
   {``}
-  {reflex___state____state__app___components___data_table____table_state.column_headers.map((item, index_b8c37db23ba411db) => (
-  <RadixThemesSelect.Item key={index_b8c37db23ba411db} value={item}>
+  {reflex___state____state__app___components___data_table____table_state.column_headers.map((item, index_150381d92f8fe7a3) => (
+  <RadixThemesSelect.Item key={index_150381d92f8fe7a3} value={item}>
   {item}
 </RadixThemesSelect.Item>
 ))}
@@ -14872,8 +14873,8 @@ export function Fragment_feb981647c0ab750a00a41d6f74257c5 () {
   <RadixThemesTable.Root css={{"width": "100%"}} variant={`surface`}>
   <RadixThemesTable.Header css={{"width": "100%"}}>
   <RadixThemesTable.Row>
-  {reflex___state____state__app___components___data_table____table_state.column_headers.map((column, index_fd2df587f8784f7d) => (
-  <RadixThemesTable.ColumnHeaderCell key={index_fd2df587f8784f7d} onClick={(_e) => addEvents([Event("reflex___state____state.app___components___data_table____table_state.set_sort", {column:column})], (_e), {})}>
+  {reflex___state____state__app___components___data_table____table_state.column_headers.map((column, index_d9edfb4c366e192b) => (
+  <RadixThemesTable.ColumnHeaderCell key={index_d9edfb4c366e192b} onClick={(_e) => addEvents([Event("reflex___state____state.app___components___data_table____table_state.set_sort", {column:column})], (_e), {})}>
   <RadixThemesFlex align={`center`} className={`rx-Stack`} direction={`row`} gap={`3`}>
   <RadixThemesText as={`p`}>
   {column}
@@ -14904,10 +14905,10 @@ export function Fragment_feb981647c0ab750a00a41d6f74257c5 () {
 </RadixThemesTable.Row>
 </RadixThemesTable.Header>
   <RadixThemesTable.Body css={{"width": "100%"}}>
-  {reflex___state____state__app___components___data_table____table_state.current_data.map((doc, index_53b4915d03f5e0a9) => (
-  <RadixThemesTable.Row key={index_53b4915d03f5e0a9} onClick={(_e) => addEvents([Event("reflex___state____state.app___components___lightbox____viewing_state.open_box", {new_collection:reflex___state____state__app___components___data_table____table_state.doc_type,new_doc:doc})], (_e), {})}>
-  {Object.entries(doc).map((entry, index_b4acac8b80712e73) => (
-  <RadixThemesTable.Cell key={index_b4acac8b80712e73}>
+  {reflex___state____state__app___components___data_table____table_state.current_data.map((doc, index_07b933202c915c5d) => (
+  <RadixThemesTable.Row key={index_07b933202c915c5d} onClick={(_e) => addEvents([Event("reflex___state____state.app___components___lightbox____viewing_state.open_box", {new_collection:reflex___state____state__app___components___data_table____table_state.doc_type,new_doc:doc})], (_e), {})}>
+  {Object.entries(doc).map((entry, index_c68b4c0e4a37a414) => (
+  <RadixThemesTable.Cell key={index_c68b4c0e4a37a414}>
   {entry.at(1)}
 </RadixThemesTable.Cell>
 ))}
@@ -15488,8 +15489,8 @@ export function Fragment_feb981647c0ab750a00a41d6f74257c5 () {
 </RadixThemesPopover.Trigger>
   <RadixThemesPopover.Content>
   <RadixThemesFlex align={`start`} className={`rx-Stack`} direction={`column`} gap={`3`}>
-  {reflex___state____state__app___components___form_fields____download_state.images.map((image, index_1d4158b32dee710f) => (
-  <RadixThemesButton css={{"width": "100%"}} key={index_1d4158b32dee710f} onClick={(_e) => addEvents([Event("_download", {url:image,filename:``})], (_e), {})} variant={`ghost`}>
+  {reflex___state____state__app___components___form_fields____download_state.images.map((image, index_a368c70459e43df8) => (
+  <RadixThemesButton css={{"width": "100%"}} key={index_a368c70459e43df8} onClick={(_e) => addEvents([Event("_download", {url:image,filename:``})], (_e), {})} variant={`ghost`}>
   <img css={{"height": "50px", "width": "50px"}} src={image}/>
 </RadixThemesButton>
 ))}
@@ -16592,8 +16593,8 @@ export function Fragment_feb981647c0ab750a00a41d6f74257c5 () {
   <RadixThemesSelect.Content position={`popper`}>
   <RadixThemesSelect.Group>
   {``}
-  {reflex___state____state__app___components___data_table____table_state.column_headers.map((item, index_b8c37db23ba411db) => (
-  <RadixThemesSelect.Item key={index_b8c37db23ba411db} value={item}>
+  {reflex___state____state__app___components___data_table____table_state.column_headers.map((item, index_150381d92f8fe7a3) => (
+  <RadixThemesSelect.Item key={index_150381d92f8fe7a3} value={item}>
   {item}
 </RadixThemesSelect.Item>
 ))}
@@ -16605,8 +16606,8 @@ export function Fragment_feb981647c0ab750a00a41d6f74257c5 () {
   <RadixThemesTable.Root css={{"width": "100%"}} variant={`surface`}>
   <RadixThemesTable.Header css={{"width": "100%"}}>
   <RadixThemesTable.Row>
-  {reflex___state____state__app___components___data_table____table_state.column_headers.map((column, index_fd2df587f8784f7d) => (
-  <RadixThemesTable.ColumnHeaderCell key={index_fd2df587f8784f7d} onClick={(_e) => addEvents([Event("reflex___state____state.app___components___data_table____table_state.set_sort", {column:column})], (_e), {})}>
+  {reflex___state____state__app___components___data_table____table_state.column_headers.map((column, index_d9edfb4c366e192b) => (
+  <RadixThemesTable.ColumnHeaderCell key={index_d9edfb4c366e192b} onClick={(_e) => addEvents([Event("reflex___state____state.app___components___data_table____table_state.set_sort", {column:column})], (_e), {})}>
   <RadixThemesFlex align={`center`} className={`rx-Stack`} direction={`row`} gap={`3`}>
   <RadixThemesText as={`p`}>
   {column}
@@ -16637,10 +16638,10 @@ export function Fragment_feb981647c0ab750a00a41d6f74257c5 () {
 </RadixThemesTable.Row>
 </RadixThemesTable.Header>
   <RadixThemesTable.Body css={{"width": "100%"}}>
-  {reflex___state____state__app___components___data_table____table_state.current_data.map((doc, index_53b4915d03f5e0a9) => (
-  <RadixThemesTable.Row key={index_53b4915d03f5e0a9} onClick={(_e) => addEvents([Event("reflex___state____state.app___components___lightbox____viewing_state.open_box", {new_collection:reflex___state____state__app___components___data_table____table_state.doc_type,new_doc:doc})], (_e), {})}>
-  {Object.entries(doc).map((entry, index_b4acac8b80712e73) => (
-  <RadixThemesTable.Cell key={index_b4acac8b80712e73}>
+  {reflex___state____state__app___components___data_table____table_state.current_data.map((doc, index_07b933202c915c5d) => (
+  <RadixThemesTable.Row key={index_07b933202c915c5d} onClick={(_e) => addEvents([Event("reflex___state____state.app___components___lightbox____viewing_state.open_box", {new_collection:reflex___state____state__app___components___data_table____table_state.doc_type,new_doc:doc})], (_e), {})}>
+  {Object.entries(doc).map((entry, index_c68b4c0e4a37a414) => (
+  <RadixThemesTable.Cell key={index_c68b4c0e4a37a414}>
   {entry.at(1)}
 </RadixThemesTable.Cell>
 ))}
@@ -17221,8 +17222,8 @@ export function Fragment_feb981647c0ab750a00a41d6f74257c5 () {
 </RadixThemesPopover.Trigger>
   <RadixThemesPopover.Content>
   <RadixThemesFlex align={`start`} className={`rx-Stack`} direction={`column`} gap={`3`}>
-  {reflex___state____state__app___components___form_fields____download_state.images.map((image, index_1d4158b32dee710f) => (
-  <RadixThemesButton css={{"width": "100%"}} key={index_1d4158b32dee710f} onClick={(_e) => addEvents([Event("_download", {url:image,filename:``})], (_e), {})} variant={`ghost`}>
+  {reflex___state____state__app___components___form_fields____download_state.images.map((image, index_a368c70459e43df8) => (
+  <RadixThemesButton css={{"width": "100%"}} key={index_a368c70459e43df8} onClick={(_e) => addEvents([Event("_download", {url:image,filename:``})], (_e), {})} variant={`ghost`}>
   <img css={{"height": "50px", "width": "50px"}} src={image}/>
 </RadixThemesButton>
 ))}
@@ -18325,8 +18326,8 @@ export function Fragment_feb981647c0ab750a00a41d6f74257c5 () {
   <RadixThemesSelect.Content position={`popper`}>
   <RadixThemesSelect.Group>
   {``}
-  {reflex___state____state__app___components___data_table____table_state.column_headers.map((item, index_b8c37db23ba411db) => (
-  <RadixThemesSelect.Item key={index_b8c37db23ba411db} value={item}>
+  {reflex___state____state__app___components___data_table____table_state.column_headers.map((item, index_150381d92f8fe7a3) => (
+  <RadixThemesSelect.Item key={index_150381d92f8fe7a3} value={item}>
   {item}
 </RadixThemesSelect.Item>
 ))}
@@ -18338,8 +18339,8 @@ export function Fragment_feb981647c0ab750a00a41d6f74257c5 () {
   <RadixThemesTable.Root css={{"width": "100%"}} variant={`surface`}>
   <RadixThemesTable.Header css={{"width": "100%"}}>
   <RadixThemesTable.Row>
-  {reflex___state____state__app___components___data_table____table_state.column_headers.map((column, index_fd2df587f8784f7d) => (
-  <RadixThemesTable.ColumnHeaderCell key={index_fd2df587f8784f7d} onClick={(_e) => addEvents([Event("reflex___state____state.app___components___data_table____table_state.set_sort", {column:column})], (_e), {})}>
+  {reflex___state____state__app___components___data_table____table_state.column_headers.map((column, index_d9edfb4c366e192b) => (
+  <RadixThemesTable.ColumnHeaderCell key={index_d9edfb4c366e192b} onClick={(_e) => addEvents([Event("reflex___state____state.app___components___data_table____table_state.set_sort", {column:column})], (_e), {})}>
   <RadixThemesFlex align={`center`} className={`rx-Stack`} direction={`row`} gap={`3`}>
   <RadixThemesText as={`p`}>
   {column}
@@ -18370,10 +18371,10 @@ export function Fragment_feb981647c0ab750a00a41d6f74257c5 () {
 </RadixThemesTable.Row>
 </RadixThemesTable.Header>
   <RadixThemesTable.Body css={{"width": "100%"}}>
-  {reflex___state____state__app___components___data_table____table_state.current_data.map((doc, index_53b4915d03f5e0a9) => (
-  <RadixThemesTable.Row key={index_53b4915d03f5e0a9} onClick={(_e) => addEvents([Event("reflex___state____state.app___components___lightbox____viewing_state.open_box", {new_collection:reflex___state____state__app___components___data_table____table_state.doc_type,new_doc:doc})], (_e), {})}>
-  {Object.entries(doc).map((entry, index_b4acac8b80712e73) => (
-  <RadixThemesTable.Cell key={index_b4acac8b80712e73}>
+  {reflex___state____state__app___components___data_table____table_state.current_data.map((doc, index_07b933202c915c5d) => (
+  <RadixThemesTable.Row key={index_07b933202c915c5d} onClick={(_e) => addEvents([Event("reflex___state____state.app___components___lightbox____viewing_state.open_box", {new_collection:reflex___state____state__app___components___data_table____table_state.doc_type,new_doc:doc})], (_e), {})}>
+  {Object.entries(doc).map((entry, index_c68b4c0e4a37a414) => (
+  <RadixThemesTable.Cell key={index_c68b4c0e4a37a414}>
   {entry.at(1)}
 </RadixThemesTable.Cell>
 ))}
@@ -18574,8 +18575,8 @@ export function Fragment_feb981647c0ab750a00a41d6f74257c5 () {
   <RadixThemesSelect.Content position={`popper`}>
   <RadixThemesSelect.Group>
   {``}
-  {reflex___state____state__app___pages___office___office_phonebook____office_phonebook_state.column_headers.map((item, index_b8c37db23ba411db) => (
-  <RadixThemesSelect.Item key={index_b8c37db23ba411db} value={item}>
+  {reflex___state____state__app___pages___office___office_phonebook____office_phonebook_state.column_headers.map((item, index_150381d92f8fe7a3) => (
+  <RadixThemesSelect.Item key={index_150381d92f8fe7a3} value={item}>
   {item}
 </RadixThemesSelect.Item>
 ))}
@@ -18588,8 +18589,8 @@ export function Fragment_feb981647c0ab750a00a41d6f74257c5 () {
   <RadixThemesTable.Root css={{"border": "1px solid #ccc", "padding": "10px", "width": "100%"}} variant={`ghost`}>
   <RadixThemesTable.Header>
   <RadixThemesTable.Row>
-  {reflex___state____state__app___pages___office___office_phonebook____office_phonebook_state.column_headers.map((column, index_160586fea9e5ad46) => (
-  <RadixThemesTable.ColumnHeaderCell key={index_160586fea9e5ad46} onClick={(_e) => addEvents([Event("reflex___state____state.app___pages___office___office_phonebook____office_phonebook_state.set_sort", {column:column})], (_e), {})}>
+  {reflex___state____state__app___pages___office___office_phonebook____office_phonebook_state.column_headers.map((column, index_ce36259764ff8155) => (
+  <RadixThemesTable.ColumnHeaderCell key={index_ce36259764ff8155} onClick={(_e) => addEvents([Event("reflex___state____state.app___pages___office___office_phonebook____office_phonebook_state.set_sort", {column:column})], (_e), {})}>
   <RadixThemesFlex align={`center`} className={`rx-Stack`} direction={`row`} gap={`3`}>
   <RadixThemesText as={`p`}>
   {column}
@@ -18620,10 +18621,10 @@ export function Fragment_feb981647c0ab750a00a41d6f74257c5 () {
 </RadixThemesTable.Row>
 </RadixThemesTable.Header>
   <RadixThemesTable.Body>
-  {reflex___state____state__app___pages___office___office_phonebook____office_phonebook_state.current_data.map((doc, index_45243d8d5725e0c0) => (
-  <RadixThemesTable.Row key={index_45243d8d5725e0c0}>
-  {Object.entries(doc).map((entry, index_b4acac8b80712e73) => (
-  <RadixThemesTable.Cell key={index_b4acac8b80712e73}>
+  {reflex___state____state__app___pages___office___office_phonebook____office_phonebook_state.current_data.map((doc, index_802b2fca8dec4259) => (
+  <RadixThemesTable.Row key={index_802b2fca8dec4259}>
+  {Object.entries(doc).map((entry, index_c68b4c0e4a37a414) => (
+  <RadixThemesTable.Cell key={index_c68b4c0e4a37a414}>
   {entry.at(1)}
 </RadixThemesTable.Cell>
 ))}
@@ -18790,23 +18791,22 @@ export function Fragment_feb981647c0ab750a00a41d6f74257c5 () {
   )
 }
 
-export function Fragment_cf53a535ae2e610a113dd361eb6ac95b () {
-  const [addEvents, connectErrors] = useContext(EventLoopContext);
-
-
-
-  return (
-    <Fragment>
-  {isTrue(connectErrors.length > 0) ? (
-  <Fragment>
-  <LucideWifiOffIcon css={{"color": "crimson", "zIndex": 9999, "position": "fixed", "bottom": "33px", "right": "33px", "animation": `${pulse} 1s infinite`}} size={32}/>
-</Fragment>
-) : (
-  <Fragment/>
-)}
-</Fragment>
-  )
-}
+                function Fallback({ error, resetErrorBoundary }) {
+                    return (
+                        <div>
+  <p>
+  {`Ooops...Unknown Reflex error has occured:`}
+</p>
+  <p css={{"color": "red"}}>
+  {error.message}
+</p>
+  <p>
+  {`Please contact the support.`}
+</p>
+</div>
+                    );
+                }
+            
 
 export default function Component() {
   const [addEvents, connectErrors] = useContext(EventLoopContext);
@@ -18826,7 +18826,7 @@ export default function Component() {
   <Div_ac2a89ea84667d600a059f034bd91dfe/>
   <Toaster_6e90e5e87a1cac8c96c683214079bef3/>
 </Fragment>
-  <Fragment_feb981647c0ab750a00a41d6f74257c5/>
+  <Fragment_8363f1cb7b607ba411ea2c8f4c3b04df/>
   <NextHead>
   <title>
   {`App | Index`}
