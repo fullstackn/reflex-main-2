@@ -2,6 +2,7 @@ import reflex as rx
 import app.main as mn
 # import app.tools.db_interact as db_interact
 
+
 class LoginState(rx.State):
 
     user: str = ""
