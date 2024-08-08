@@ -1,7 +1,8 @@
 *.db
 *.py[cod]
 .DS_Store
+.vercel
+.web
 /myenv
 __pycache__/
 assets/external/
-.vercel
