@@ -6,7 +6,10 @@ import pymongo
 from pymongo.collection import Collection
 from pymongo.mongo_client import MongoClient
 
-cluster = MongoClient("mongodb+srv://colin:MooWD9I69LuuUJRN@maincluster.hmfgfha.mongodb.net/?retryWrites=true&w=majority&appName=MainCluster")
+cluster = MongoClient(
+    "mongodb+srv://colin:MooWD9I69LuuUJRN@maincluster.hmfgfha.mongodb.net/?retryWrites=true&w=majority&appName=MainCluster",
+    tlsAllowInvalidCertificates=True
+                      )
 db = cluster['Shop4Me']
 
 myid = 'Colin'
